@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssm-common/ssm-common.iml" filepath="$PROJECT_DIR$/ssm-common/ssm-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager-dao/ssm-manager-dao.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager-dao/ssm-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager-interface/ssm-manager-interface.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager-interface/ssm-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager-pojo/ssm-manager-pojo.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager-pojo/ssm-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager-service/ssm-manager-service.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager-service/ssm-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-manager/ssm-manager-web/ssm-manager-web.iml" filepath="$PROJECT_DIR$/ssm-manager/ssm-manager-web/ssm-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-parent/ssm-parent.iml" filepath="$PROJECT_DIR$/ssm-parent/ssm-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-portal/ssm-portal.iml" filepath="$PROJECT_DIR$/ssm-portal/ssm-portal.iml" />
+    </modules>
+  </component>
+</project>
