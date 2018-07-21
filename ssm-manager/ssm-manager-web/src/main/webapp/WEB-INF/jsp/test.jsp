@@ -8,24 +8,33 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
 </head>
 <body>
-    <h1>hello world</h1>
-    <button id="btnClick">点我</button>
-    <script>
-        $(function(){
-            var obj = {'orderList':[{'versionItemId':893,'orderNum':1,'enable':1}]};
-            $('#btnClick').click(function(){
-                $.ajax({
-                    url:'mytest',
-                    type:'post',
-                    dataType:'json',
-                    contentType:'application/json',
-                    data:JSON.stringify(obj),
-                    success:function(data){
-                        console.log(data);
-                    }
-                });
-            });
-        });
+   <%--// <button id="btnClick">点我</button>--%>
+    <script type="text/javascript">
+        // $(function(){
+        //     var obj = {'orderList':[{'versionItemId':893,'orderNum':1,'enable':1}]};
+        //     $('#btnClick').click(function(){
+        //         $.ajax({
+        //             url:'mytest',
+        //             type:'post',
+        //             dataType:'json',
+        //             contentType:'application/json',
+        //             data:JSON.stringify(obj),
+        //             success:function(data){
+        //                 console.log(data);
+        //             }
+        //         });
+        //     });
+        // });
+
     </script>
+   <%--<script>--%>
+       <%--//一般直接写在一个js文件中--%>
+       <%--layui.use(['layer', 'form'], function(){--%>
+           <%--var layer = layui.layer--%>
+               <%--,form = layui.form;--%>
+
+           <%--layer.msg('Hello World');--%>
+       <%--});--%>
+   <%--</script>--%>
 </body>
 </html>

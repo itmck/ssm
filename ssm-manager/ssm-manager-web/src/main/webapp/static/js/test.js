@@ -1,8 +1,10 @@
-layui.use(['jquery','form'],function(){
+layui.use(['jquery','form','layer'],function(){
     var $ = layui.jquery,
-        form = layui.form;
+        form = layui.form,
+        layer=layui.layer;
 
-    $(function () {
-        alert("hello");
-    });
+    // $(function () {
+    //     alert("hello");
+    // });
+   layer.msg("hah");
 });
