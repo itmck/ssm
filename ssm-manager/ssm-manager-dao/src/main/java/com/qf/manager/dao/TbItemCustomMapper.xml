@@ -11,25 +11,37 @@
     WHEN  1 THEN '正常'
     WHEN  2 THEN '下架'
     WHEN  3 THEN '删除'
-    ELSE '未知' END AS statusName
-    , i.created, i.updated,c.name as catName
+    ELSE '未知' END AS statusName,
+    i.created, i.updated,c.name as catName
   </sql>
+    <sql id="where_Column">
+        <where>
+            i.status !=3
+            <if test="itemQuery!=null and itemQuery.title!=null and itemQuery.title!=''">
+                and  i.title like '%${itemQuery.title}%'
+            </if>
+
+        </where>
+    </sql>
 
     <!--count查询-->
-    <select id="countItems" resultType="_long">
+    <select id="countItems" parameterType="com.qf.manager.pojo.dto.ItemQuery" resultType="_long">
         select count(1)
         from tb_item i
+        <include refid="where_Column"/>
    </select>
 
     <!--定义data查询-->
-    <select id="listItemsByPage" parameterType="com.qf.manager.pojo.dto.PageParam"
+    <select id="listItemsByPage"
             resultType="com.qf.manager.pojo.vo.TbItemCustom">
 
         select
         <include refid="Base_Column_List"/>
         from tb_item i left join tb_item_cat c
-        ON i.cid=c.id order by i.id
-        limit #{offset},#{limit}
+        ON i.cid=c.id
+        <include refid="where_Column"/>
+        order by i.id
+        limit #{pageparam.offset},#{pageparam.limit}
     </select>
 
 

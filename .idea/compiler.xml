@@ -14,16 +14,5 @@
         <module name="ssm-manager-web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ssm-common" target="1.8" />
-      <module name="ssm-manager" target="1.8" />
-      <module name="ssm-manager-dao" target="1.8" />
-      <module name="ssm-manager-interface" target="1.8" />
-      <module name="ssm-manager-pojo" target="1.8" />
-      <module name="ssm-manager-service" target="1.8" />
-      <module name="ssm-manager-web" target="1.8" />
-      <module name="ssm-parent" target="1.8" />
-      <module name="ssm-portal" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
