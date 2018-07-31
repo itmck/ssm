@@ -11,6 +11,7 @@
         <module>../ssm-common</module>
         <module>../ssm-portal</module>
         <module>../ssm-manager</module>
+        <module>../ssm-search-web</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/font.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/weadmin.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/lib/layui/css/layui.css" media="all">
-    <%--<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>--%>
+   <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
     <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/itemlist.js"--%>
     <%--charset="utf-8"></script>--%>
@@ -70,7 +70,7 @@
     <div class="weadmin-block demoTable">
         <button class="layui-btn layui-btn-danger" data-type="getCheckData"><i class="layui-icon">&#xe640;</i>批量删除
         </button>
-        <button class="layui-btn" onclick="WeAdminShow('添加商品','./add',600,500)"><i class="layui-icon">&#xe61f;</i>添加
+        <button class="layui-btn" onclick="WeAdminShow('添加商品','./add2',600,500)"><i class="layui-icon">&#xe61f;</i>添加
         </button>
     </div>
 
@@ -91,12 +91,12 @@
     <%--<input type="checkbox" name="itemstatus" lay-filter="itemstatus" lay-skin="switch" lay-text="正常|下架" {{1==d.status?'checked':''}}/>--%>
     <%--</form>--%>
     <%--</script>--%>
-    <script type="text/html" id="myTpl">
-        <div class="layui-form">
-            <input type="checkbox" name="itemStatus" id="itemStatus" lay-skin="switch" lay-text="正常|下架"
-                   {{1==d.status?'checked':''}}/>
-        </div>
-    </script>
+    <%--<script type="text/html" id="myTpl">--%>
+        <%--<div class="layui-form">--%>
+            <%--<input type="checkbox" name="itemStatus" id="itemStatus" lay-skin="switch" lay-text="正常|下架"--%>
+                   <%--{{1==d.status?'checked':''}}/>--%>
+        <%--</div>--%>
+    <%--</script>--%>
 
 </div>
 <script type="text/javascript">
