@@ -17,7 +17,10 @@ layui.use(['form', 'table', 'jquery', 'admin'], function () {
             null,
             //success
             function(data){
-                console.log(data);
+               console.log(data);
+
+
+
             },
             //dataType
             'json'

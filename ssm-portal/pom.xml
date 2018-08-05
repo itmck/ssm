@@ -17,6 +17,7 @@
         <module>ssm-portal-dao</module>
         <module>ssm-portal-interface</module>
         <module>ssm-portal-service</module>
+        <module>ssm-portal-web</module>
     </modules>
 
     <dependencies>

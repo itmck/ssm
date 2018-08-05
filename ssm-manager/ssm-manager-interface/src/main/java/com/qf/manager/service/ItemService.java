@@ -26,4 +26,12 @@ public interface ItemService {
      * 根据前台传入的id删除商品
      */
     int updateItemByIds(List<Long> ids);
+
+    /**
+     *
+     *  导入到solr
+     *
+     */
+
+    void importIndexLib();
 }

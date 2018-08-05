@@ -1,5 +1,6 @@
 package com.qf.manager.web;
 
+import com.qf.common.dto.MessageResult;
 import com.qf.manager.pojo.dto.ItemQuery;
 import com.qf.manager.pojo.dto.ItemResult;
 import com.qf.manager.pojo.dto.PageParam;
@@ -24,19 +25,19 @@ public class ItemAction {
     private ItemService itemService;
 
     /**
-     *
      * 查询
+     *
      * @param pageparam
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/items", method = RequestMethod.GET)
-    public ItemResult<TbItemCustom> listItems(PageParam pageparam,ItemQuery itemQuery) {
+    public ItemResult<TbItemCustom> listItems(PageParam pageparam, ItemQuery itemQuery) {
 
         ItemResult<TbItemCustom> result = null;
 
         try {
-            result = itemService.listItems(pageparam,itemQuery);
+            result = itemService.listItems(pageparam, itemQuery);
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -47,8 +48,8 @@ public class ItemAction {
     }
 
     /**
-     *
      * 删除
+     *
      * @param ids
      * @return
      */
@@ -66,5 +67,21 @@ public class ItemAction {
 
         return i;
 
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/item/indexlib/import", method = RequestMethod.POST)
+    public MessageResult importIndexLib() {
+        MessageResult mr = new MessageResult();
+        mr.setSuccess(false);
+        mr.setMsg("import failed");
+        try {
+            itemService.importIndexLib();
+            mr.setSuccess(true);
+            mr.setMsg("import success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mr;
     }
 }

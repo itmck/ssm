@@ -45,4 +45,20 @@
     </select>
 
 
+    <select id="listIndexByTwo" resultType="com.qf.manager.pojo.vo.TbItemIndex">
+      SELECT
+    i.id,
+    i.title,
+    i.sell_point as sellPoint,
+    i.price,
+    i.image,
+    c.name as catName
+    FROM
+    tb_item i
+    LEFT JOIN tb_item_cat c ON i.cid = c.id
+    WHERE
+    i.status = 1
+    </select>
+
+
 </mapper>

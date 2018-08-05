@@ -1,14 +1,16 @@
 package com.qf.manager.service.impl;
 
 import com.qf.manager.dao.TbItemCustomMapper;
-import com.qf.manager.dao.TbItemMapper;
 import com.qf.manager.pojo.dto.ItemQuery;
 import com.qf.manager.pojo.dto.ItemResult;
 import com.qf.manager.pojo.dto.PageParam;
 import com.qf.manager.pojo.po.TbItem;
 import com.qf.manager.pojo.po.TbItemExample;
 import com.qf.manager.pojo.vo.TbItemCustom;
+import com.qf.manager.pojo.vo.TbItemIndex;
 import com.qf.manager.service.ItemService;
+import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.common.SolrInputDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class ItemServiceImpl implements ItemService {
     //我在前边用TbItemCustomMapper继承了TbItemMapper,所以就不需要再次注入下边数据
 //    @Autowired
 //    private TbItemMapper tbItemMapper;
+
+    @Autowired
+    private SolrServer solrServer;
 
     /**
      * 查询商品
@@ -132,5 +137,39 @@ public class ItemServiceImpl implements ItemService {
 
 
         return i;
+    }
+
+    /**
+     *
+     * 为了导入索引库用来采集数据
+     */
+
+    @Override
+    public void importIndexLib() {
+        try {
+            //1 采集数据
+            List<TbItemIndex> list = tbItemCustomDao.listIndexByTwo();
+            //2 导入索引库（遍历集合 documentList）
+            for (TbItemIndex i : list) {
+                //a Document
+                SolrInputDocument document = new SolrInputDocument();
+                //b 把list中每个对象的属性设置到document的field
+                document.addField("id", i.getId());
+                document.addField("item_title", i.getTitle());
+                document.addField("item_sell_point", i.getSellPoint());
+                document.addField("item_price", i.getPrice());
+                document.addField("item_image", i.getImage());
+                document.addField("item_category_name", i.getCatName());
+                //c addDocument
+                solrServer.add(document);
+            }
+            //d 提交
+            solrServer.commit();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            e.printStackTrace();
+        }
+
+
     }
 }

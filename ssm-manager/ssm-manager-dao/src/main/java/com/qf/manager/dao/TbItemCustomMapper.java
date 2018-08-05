@@ -1,10 +1,7 @@
 package com.qf.manager.dao;
 
-import com.qf.manager.pojo.dto.ItemQuery;
-import com.qf.manager.pojo.dto.PageParam;
 import com.qf.manager.pojo.vo.TbItemCustom;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.qf.manager.pojo.vo.TbItemIndex;
 
 import java.util.List;
 import java.util.Map;
@@ -50,4 +47,9 @@ public interface TbItemCustomMapper extends TbItemMapper{//继承目的为了后
      */
     List<TbItemCustom> listItemsByPage(Map<String,Object> map);
 
+    /**
+     * 为了导入索引库用来采集数据
+     * @return
+     */
+    List<TbItemIndex> listIndexByTwo();
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.shop.search.dao.TbItemIndexMapper" >
+  <select id="getItemById" parameterType="_long" resultType="com.qf.shop.search.pojo.vo.TbItemIndex">
+    select
+        i.id,
+        i.title,
+        i.sell_point as sellPoint,
+        i.price,
+        i.image,
+        c.name as catName
+        from tb_item i
+        left join tb_item_cat c on i.cid=c.id
+        where i.id=#{itemId}
+  </select>
+</mapper>
